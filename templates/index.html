@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>LoanRisk - Loan Assessment</title>
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}">
+
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+<div class="logo">
+    <span>Loan</span>Risk
+</div>
+
+<div class="nav-links">
+
+    <a href="/" class="active">
+        Home
+    </a>
+
+    <a href="/applications">
+        Applications
+    </a>
+
+</div>
+
+</nav>
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="hero-section">
+
+<div class="hero-content">
+
+    <div class="hero-text">
+
+        <div class="small-title">
+            SMART LOAN ASSESSMENT
+        </div>
+
+        <h1>
+            Make smarter loan
+            <span>decisions.</span>
+        </h1>
+
+        <p>
+            Evaluate loan eligibility and assess financial
+            risk using a rule-based intelligent system.
+        </p>
+
+        <div class="feature-row">
+
+            <div class="feature">
+                <div class="feature-icon">✓</div>
+
+                <div>
+                    <strong>Eligibility Check</strong>
+                    <small>Instant assessment</small>
+                </div>
+            </div>
+
+
+            <div class="feature">
+                <div class="feature-icon">◆</div>
+
+                <div>
+                    <strong>Risk Analysis</strong>
+                    <small>Smart risk evaluation</small>
+                </div>
+            </div>
+
+
+            <div class="feature">
+                <div class="feature-icon">▣</div>
+
+                <div>
+                    <strong>Secure Records</strong>
+                    <small>Application history</small>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FORM ================= -->
+
+    <div class="loan-card">
+
+        <div class="card-heading">
+
+            <div>
+                <h2>Loan Assessment</h2>
+
+                <p>
+                    Enter applicant information
+                </p>
+            </div>
+
+            <div class="card-icon">
+                ₹
+            </div>
+
+        </div>
+
+
+        <form action="/check" method="POST">
+
+
+            <div class="input-row">
+
+                <div class="input-group">
+
+                    <label>Applicant Name</label>
+
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Age</label>
+
+                    <input
+                        type="number"
+                        name="age"
+                        placeholder="Age"
+                        min="1"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>Monthly Income</label>
+
+                <div class="input-with-icon">
+
+                    <span>₹</span>
+
+                    <input
+                        type="number"
+                        name="income"
+                        placeholder="Enter monthly income"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>Employment Type</label>
+
+                <select name="employment" required>
+
+                    <option value="salaried">
+                        Salaried
+                    </option>
+
+                    <option value="self_employed">
+                        Self Employed
+                    </option>
+
+                    <option value="student">
+                        Student
+                    </option>
+
+                    <option value="unemployed">
+                        Unemployed
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="input-row">
+
+                <div class="input-group">
+
+                    <label>Credit Score</label>
+
+                    <input
+                        type="number"
+                        name="credit_score"
+                        placeholder="0 - 900"
+                        min="0"
+                        max="900"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Monthly Debt</label>
+
+                    <div class="input-with-icon">
+
+                        <span>₹</span>
+
+                        <input
+                            type="number"
+                            name="debt"
+                            placeholder="Debt"
+                            min="0"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label>Requested Loan Amount</label>
+
+                <div class="input-with-icon">
+
+                    <span>₹</span>
+
+                    <input
+                        type="number"
+                        name="loan_amount"
+                        placeholder="Enter loan amount"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <button type="submit" class="assessment-button">
+
+                Check Loan Eligibility
+
+                <span>→</span>
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- ================= BOTTOM INFO ================= -->
+
+<section class="info-section">
+
+
+<div class="info-card">
+
+    <div class="info-number">
+        01
+    </div>
+
+    <div>
+        <h3>Enter Details</h3>
+
+        <p>
+            Provide the applicant's financial information.
+        </p>
+    </div>
+
+</div>
+
+
+<div class="info-card">
+
+    <div class="info-number">
+        02
+    </div>
+
+    <div>
+        <h3>Rule-Based Analysis</h3>
+
+        <p>
+            Prolog evaluates predefined loan rules.
+        </p>
+    </div>
+
+</div>
+
+
+<div class="info-card">
+
+    <div class="info-number">
+        03
+    </div>
+
+    <div>
+        <h3>Get Result</h3>
+
+        <p>
+            View eligibility, risk level and reasons.
+        </p>
+    </div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+<strong>LoanRisk</strong>
+
+<span>
+    Loan Eligibility & Risk Assessment System
+</span>
+
+</footer>
+
+</body>
+
+</html>
